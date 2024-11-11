@@ -27,7 +27,7 @@
 <meta property="og:description" content="链接 https:&#x2F;&#x2F;www.cognitivesciencesociety.org&#x2F;cogsci20&#x2F;papers&#x2F;0724&#x2F;0724.pdf Summary 以下是论文《Adventures in Flatland: Perceiving Social Interactions Under Physical Dynamics》的内容总结：  任务（task）  本文任务是通过Flatland的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-10T10:10:30.000Z">
-<meta property="article:modified_time" content="2024-11-10T10:29:52.965Z">
+<meta property="article:modified_time" content="2024-11-10T13:30:41.866Z">
 <meta property="article:author" content="岸芷汀兰">
 <meta property="article:tag" content="论文笔记">
 <meta property="article:tag" content="认知推理">
@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -202,7 +202,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-11-10 18:10:30 / 修改时间：18:29:52" itemprop="dateCreated datePublished" datetime="2024-11-10T18:10:30+08:00">2024-11-10</time>
+      <time title="创建时间：2024-11-10 18:10:30 / 修改时间：21:30:41" itemprop="dateCreated datePublished" datetime="2024-11-10T18:10:30+08:00">2024-11-10</time>
     </span>
 
   
@@ -305,18 +305,16 @@ class="math inline">\(j\)</span>的个人目标奖励。</li>
 <li><span class="math inline">\(C(a)\)</span>为动作的成本。</li>
 </ul></li>
 <li><p><strong>生成社会与物理推理（GSPI）</strong></p>
-<ul>
-<li>GSPI模型结合层次规划和物理引擎进行<strong>贝叶斯推理</strong>，用于推断代理的目标、关系和力量等隐性变量。具体地，GSPI通过对观测到的社会交互（例如多个代理的运动轨迹）进行推理，预测代理的目标和关系。</li>
-</ul>
+<p>GSPI模型结合层次规划和物理引擎进行<strong>贝叶斯推理</strong>，用于推断代理的目标、关系和力量等隐性变量。具体地，GSPI通过对观测到的社会交互（例如多个代理的运动轨迹）进行推理，预测代理的目标和关系。</p>
 <p>在给定目标和社会关系的条件下，GSPI通过物理引擎模拟代理的行为，并计算与观测行为的匹配度。推理过程基于贝叶斯定理，公式如下：</p>
 <p><span class="math display">\[
-P(g_i, g_j, f_i, f_j, \alpha_{ij}, \alpha_{ji} | s_1:T) \propto P(s_1:T
-| g_i, g_j, f_i, f_j, \alpha_{ij}, \alpha_{ji}) \cdot P(g_i, g_j, f_i,
-f_j, \alpha_{ij}, \alpha_{ji})
+P(g_i, g_j, f_i, f_j, \alpha_{ij}, \alpha_{ji} | s^{1:T}) \propto
+P(s^{1:T} | g_i, g_j, f_i, f_j, \alpha_{ij}, \alpha_{ji}) \cdot P(g_i,
+g_j, f_i, f_j, \alpha_{ij}, \alpha_{ji})
 \]</span></p>
 <p>其中：</p>
 <ul>
-<li><span class="math inline">\(P(s_1:T | g_i, g_j, f_i, f_j,
+<li><span class="math inline">\(P(s^{1:T} | g_i, g_j, f_i, f_j,
 \alpha_{ij},
 \alpha_{ji})\)</span>为根据隐性变量（目标、力量、社交关系）推断出的轨迹概率。</li>
 <li><span class="math inline">\(P(g_i, g_j, f_i, f_j, \alpha_{ij},
@@ -326,9 +324,9 @@ f_j, \alpha_{ij}, \alpha_{ji})
 <p>例如，要推断代理<span class="math inline">\(i\)</span>和代理<span
 class="math inline">\(j\)</span>的社交关系，可以计算如下后验概率：</p>
 <p><span class="math display">\[
-P(\alpha_{ij}, \alpha_{ji} | s_1:T) = \prod_t \sum_{g_i, g_j, f_i, f_j}
-\sum_{o_i, o_j} P_{ij}(o_i, o_j) \cdot P(g_i) \cdot P(f_i) \cdot P(f_j)
-\cdot P(\alpha_{ij}) \cdot P(\alpha_{ji})
+P(\alpha_{ij}, \alpha_{ji} | s^{1:T}) = \prod_t \sum_{g_i, g_j, f_i,
+f_j} \sum_{o_i, o_j} P_{ij}(o_i, o_j) \cdot P(g_i) \cdot P(f_i) \cdot
+P(f_j) \cdot P(\alpha_{ij}) \cdot P(\alpha_{ji})
 \]</span></p>
 <p>该公式结合了多个目标、力量和社交关系的可能性，计算给定时间段内的社交关系的概率。</p></li>
 <li><p><strong>与现有方法比较</strong></p>
@@ -505,6 +503,9 @@ Study的对比，结果表明GSPI模型在大多数情况下显著优于现有�
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/11/12/%E4%BA%94%E5%B9%B4%E6%B2%89%E6%B2%A6-%E7%BB%88%E8%BF%8E%E7%A0%B4%E6%99%93/" rel="next" title="五年沉沦,终迎破晓">
+                  五年沉沦,终迎破晓 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
